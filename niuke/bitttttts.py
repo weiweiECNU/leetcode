@@ -21,19 +21,35 @@
 
 """
 import math
+import numpy as np
 
 n = int(input())
 min = 0 
 for i in range(n):
     k,l,r = map(int, input().split())
     
+
+
+def maxDigits(k,l,r):
     mins = int(math.log(l,k)) + 1
     maxs = int(math.log(r,k)) + 1
-    num = 0
 
+
+def isin(num, l , r):
+    return  num >= l and num <= r 
+
+
+case = []
+for i in range(maxs-1,-1,-1):
+    case.append( (k-1) ** i )
+
+case = np.matrix(case).T
+
+
+digits = []
 for i in range(maxs,mins-1,-1):
-        
-    temp = (k-1) * ( k ** (i-1) )
-    num += 
+    
+    case.append()
+
 
 print(num)
